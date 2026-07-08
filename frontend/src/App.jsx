@@ -31,7 +31,12 @@ import {
   WalletCards,
 } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
+let API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
+// Remove trailing slashes and clean up common configuration path errors
+API_BASE = API_BASE.trim().replace(/\/+$/, '');
+if (API_BASE.endsWith('/generate-plan') || API_BASE.endsWith('/chat-trip') || API_BASE.endsWith('/estimate-transport')) {
+  API_BASE = API_BASE.substring(0, API_BASE.lastIndexOf('/'));
+}
 
 const TRAVEL_THEMES = ['Adventure', 'Relaxing', 'Cultural', 'Foodie', 'Romantic'];
 const INTERESTS_OPTIONS = [
