@@ -1,0 +1,7 @@
+streamlit==1.58.0
+google-search-results==2.4.2
+agno==2.6.22
+python-dotenv==1.0.1
+mistralai==1.9.3
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
