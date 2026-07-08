@@ -23,6 +23,11 @@ agent = TravelAgent(
 )
 
 
+@app.get("/")
+async def root():
+    return {"status": "success", "message": "AI Travel Assistant Backend is running!"}
+
+
 @app.post("/generate-plan")
 async def generate_plan(request: TravelRequest):
     try:
