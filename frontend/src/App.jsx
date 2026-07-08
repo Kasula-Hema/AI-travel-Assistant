@@ -475,6 +475,7 @@ export default function App() {
     setChatHistory([]);
 
     try {
+      console.log('Fetching from backend URL:', `${API_BASE}/generate-plan`);
       const response = await fetch(`${API_BASE}/generate-plan`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
